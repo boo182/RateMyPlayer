@@ -1,0 +1,19 @@
+<input type="text" [(ngModel)]="teamQuery" />
+<button (click)="getTeam()">send</button>
+<br>
+
+<button *ngFor="let team of displayedTeams" (click)="getTeam(team.teamId)">
+  {{team.name}}
+</button>
+
+<div *ngIf="teamDisplay">
+    <h2>{{fullTeam.teamName}}</h2>
+    <p>{{fullTeam.creationDate}}</p>
+    <ul>
+      <a *ngFor="let player of fullTeam.players" href="/player/{{player._id}}"><li >
+        <p>{{player.firstName}} {{player.lastName}}</p>
+        <div>{{player.position}}</div>
+      </li></a>
+      </ul>
+  </div> 
+

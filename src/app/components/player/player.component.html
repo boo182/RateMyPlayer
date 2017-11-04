@@ -1,0 +1,18 @@
+<input type="text" [(ngModel)]="playerId" />
+<button (click)="getPlayer()">Go</button>
+
+
+<div *ngIf="playerDisplay">
+  <h2>{{player.firstName}} {{player.lastName}}</h2>
+  <p>{{player.position}}</p>
+  <p>{{player.actualTeam}}</p>
+<div>
+  Rate: {{player.ratings.avgRate}}
+  <p> Best Rate: {{player.ratings.bestRate}}</p>
+  <p> Worst Rate: {{player.ratings.worstRate}}</p>
+  
+</div>
+
+  <app-ratings>
+  </app-ratings>
+  </div>

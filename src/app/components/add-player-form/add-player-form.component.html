@@ -1,0 +1,24 @@
+<form>
+  <div>
+  <label for="FirstName">First Name:</label>
+  <input type="text" name="firstName" [(ngModel)]="firstName" placeholder="Zinédine..." />
+  </div>
+  <div>
+   <label for="lastName">Last Name:</label>
+  <input type="text" name="lastName" [(ngModel)]="lastName" placeholder="Ronaldo..." />
+  </div>
+  <div>
+   <label for="actualTeam">Actual Team:</label>  
+  <input type="text" name="actualName" [(ngModel)]="actualTeam" placeholder="Manchester United" />
+  </div>
+  <div>
+  <label for="postion">Position:</label>
+  <select name="position" [(ngModel)]="position" required>
+    <option *ngFor="let pos of positionDisplay" [value]="pos" [selected]="pos">{{pos}}</option>
+  </select>
+  </div>
+  <input type="submit" name="Send" (click)="addNewPlayer($event)" /> 
+  </form>
+
+
+<h3 *ngIf="newPlayerAdded">{{validationMessage}}</h3>

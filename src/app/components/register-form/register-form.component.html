@@ -1,0 +1,52 @@
+<form 
+  [formGroup] = "form"
+  (ngSubmit)="onSubmit(form.value)">
+  <div>
+    <label for="username">User name:</label>
+    <input type="text" name="username" formControlName="userName"/>
+    <div class="warning">
+        <div> is not a valid expression</div>
+      </div>
+  </div> 
+  <div>
+    <label for="firstname">Lastname:</label>
+    <input type="text" name="firstname" formControlName="firstName" />
+     <div class="warning">
+        <div> is not a valid expression</div>
+      </div>
+  </div>
+  <div>
+    <label for="lastname">Firstname:</label>
+    <input type="text" name="lastname"formControlName="lastName" />
+     <div class="warning">
+        <div> is not a valid expression</div>
+      </div>
+</div>
+<div>
+    <label for="email">Email:</label>
+    <input type="email" name="email" formControlName="email" />
+     <div class="warning">
+        <div> is not a valid expression</div>
+      </div>
+</div>
+<div>
+    <label for="pass">Password:</label>
+    <input type="password" name="pass" formControlName="password" />
+     <div class="warning">
+        <div> is not a valid expression</div>
+      </div>
+</div>
+<div>
+    <label for="passconf">Password confirmation:</label>
+    <input type="password" name="passconf" formControlName="passwordConf" />
+     <div class="warning">
+        <div> is not a valid expression</div>
+      </div>
+</div>
+<div>
+    <input type="submit" [disabled]="!form.valid"/>
+</div>
+  </form>
+   <div class="warning" *ngIf="passwordInvalid">
+        <div>passowrd confirmaiton doesn't match your password</div>
+      </div>
